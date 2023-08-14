@@ -37,11 +37,11 @@ export function useGetService() {
 }
 
 
-export async function useDeleteService(req, res){
+export function useDeleteService(id){
 
   return () => {
     axios
-      .delete(`${process.env.REACT_APP_API_URL}/services/${id}`)
+      .delete(`${import.meta.env.VITE_API_URL}/services/${id}`)
       .then((res) => navigate("/home/servicos"))
       .catch((err) => alert(err.response.data));
   };

@@ -5,11 +5,11 @@ import { useDeleteService } from "../services/Service";
 export default function Service(service){
     const deleteService = useDeleteService();
 
-    function onClickDelete() {
+    function onClickDelete(id) {
       const confirmDelete = window.confirm(
         `Tem certeza que deseja deletar esse serviço?`
       );
-      if (confirmDelete) {return deleteService()}
+      if (confirmDelete) {return deleteService(id);}
     }
 
 
@@ -20,7 +20,7 @@ export default function Service(service){
                 <p>{service.description}</p>
                 <p>{service.phone}</p>
                 <span>R${service.price}</span>
-                <IoMdClose onClick={onClickDelete} />
+                <IoMdClose onClick={() => onClickDelete(service.id)} />
             </ContainerService>  
     )
 }

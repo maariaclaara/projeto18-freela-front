@@ -58,7 +58,6 @@ const Component = styled.div`
 
 `
 const Profissers = styled.div`
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
   border-radius: 20px;
   width: 90vw;
   height: 100vh;
