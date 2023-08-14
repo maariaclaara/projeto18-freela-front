@@ -13,7 +13,7 @@ export default function HeaderPage() {
 const Header = styled.div`
     background-color: #03bb85;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    width: calc(100vw);
+    width: 100vw;
     height: 100px;
     display: flex;
     justify-content: center;

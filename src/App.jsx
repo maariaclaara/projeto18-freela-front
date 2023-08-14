@@ -3,11 +3,15 @@ import { useState } from "react";
 import styled from "styled-components";
 import AuthContext from "./context/AuthContext";
 import Header from "./components/Header";
-import InitialPage from "./pages/InitialPage";
-import ClientPage from "./pages/ClientPage";
-import ProfessionalPage from "./pages/ProfessionalPage";
-import SignInPage from "./pages/SignInPage";
-import SignUpPage from "./pages/SignUpPage";
+import InitialPage from "./pages/Initial/InitialPage";
+import ProfessionalPage from "./pages/Home/ProfessionalPage";
+import SignInPage from "./pages/SignIn/SignInPage";
+import SignUpPage from "./pages/SignUp/SignUpPage";
+import CompanyPage from "./pages/Home/CompanyPage";
+import ClientPage from "./pages/Home/ClientPage";
+import ProfisserPage from "./pages/Home/ProfisserPage";
+import CreateServicePage from "./pages/Home/CreateServicePage";
+import ServicesIdPage from "./pages/Home/ServicesIdPage";
 
 
 export default function App() {
@@ -25,6 +29,10 @@ export default function App() {
             <Route path="/cadastro" element={<SignUpPage />} />
             <Route path="/home" element={<ProfessionalPage />} />
             <Route path="/home/cliente" element={<ClientPage />} />
+            <Route path="/home/cliente/empresa" element={<CompanyPage />} />
+            <Route path="/home/cliente/profissionais" element={<ProfisserPage />} />
+            <Route path="/home/incluir" element={<CreateServicePage />} />
+            <Route path="/home/servicos" element={<ServicesIdPage />} />
           </Routes>
         </BrowserRouter>
       </AuthContext.Provider>
