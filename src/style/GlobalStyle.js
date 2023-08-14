@@ -70,6 +70,7 @@ const GlobalStyle = createGlobalStyle`
         line-height: 18px;
         padding-top: 15px;
         color: black;
+        text-decoration: none;
     }
 `
 

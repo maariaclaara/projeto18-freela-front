@@ -20,47 +20,29 @@ export function useAddService() {
 
 
 export function useGetService() {
-  const [transactions, setTransactions] = useState(undefined);
-  const { token } = useContext(AuthContext);
+  const [services, setServices] = useState(undefined);
 
-  const config = { headers: { Authorization: `Bearer ${token}` } };
-
-  function getTransactions() {
+  function getServices() {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/transactions`, config)
-      .then((res) => setTransactions(res.data))
+      .get(`${import.meta.env.VITE_API_URL}/services`)
+      .then((res) => setServices(res.data))
       .catch((err) => alert(err.response.data));
   }
 
   useEffect(() => {
-    getTransactions();
+    getServices();
   }, []);
 
-  return { transactions, getTransactions };
+  return { services, getServices };
 }
 
 
-export function useDeleteService() {
-  const { token } = useContext(AuthContext);
-  const config = { headers: { Authorization: `Bearer ${token}` } };
+export async function useDeleteService(req, res){
 
-  return (id, getTransactions) => {
+  return () => {
     axios
-      .delete(`${import.meta.env.VITE_API_URL}/services/${id}`, config)
-      .then((res) => getTransactions())
-      .catch((err) => alert(err.response.data));
-  };
-}
-
-export function useEditService() {
-  const { token } = useContext(AuthContext);
-  const config = { headers: { Authorization: `Bearer ${token}` } };
-  const navigate = useNavigate();
-
-  return (id, body) => {
-    axios
-      .put(`${import.meta.env.VITE_API_URL}/services/${id}`, body, config)
-      .then((res) => navigate("/home"))
+      .delete(`${process.env.REACT_APP_API_URL}/services/${id}`)
+      .then((res) => navigate("/home/servicos"))
       .catch((err) => alert(err.response.data));
   };
 }

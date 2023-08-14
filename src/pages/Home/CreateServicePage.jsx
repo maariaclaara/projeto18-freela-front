@@ -23,8 +23,8 @@ export default function CreateServicePage() {
 
         <input
           required
-          placeholder="Foto do serviço"
-          name="photo"
+          placeholder="Insira sua foto"
+          name= "photo"
           value={form.photo}
           onChange={handleForm}
         />
@@ -39,7 +39,6 @@ export default function CreateServicePage() {
 
         <input
           required
-          type="phone"
           placeholder="Telefone"
           name="phone"
           value={form.phone}
@@ -54,10 +53,8 @@ export default function CreateServicePage() {
           onChange={handleForm}
         />
 
-
         <input
           required
-          type="value"
           placeholder="Preço do seu serviço em reais"
           name="price"
           value={form.price}

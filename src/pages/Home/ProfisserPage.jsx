@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import MenuClient from "../../components/MenuClient";
+import ServiceClient  from "../../components/ServiceClient";
+import { useGetService } from "../../services/Service";
+
 
 export default function ProfisserPage() {
+  const { services } = useGetService();
 
 
   return (
@@ -13,11 +17,11 @@ export default function ProfisserPage() {
         <h1>Conheça nossos profissionais de total competência e confiança</h1> 
         <h1>e entre em contato conosco para agendar o seu serviço!</h1>
 
-    <Profissers>
-      <div>
-        <img></img>
-      </div>
-    </Profissers>
+      <Profissers>
+        {services && services.map( (service) =>
+            ServiceClient(service)
+        )}
+      </Profissers>
     </Component>
 
     </HomeContainer>
@@ -50,8 +54,9 @@ const Profissers = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
   border-radius: 20px;
   width: 90vw;
-  height: auto;
-  padding: 20px;
-  filter: blur(100%);
+  height: 100vh;
+  padding: 10px;
   margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
 `

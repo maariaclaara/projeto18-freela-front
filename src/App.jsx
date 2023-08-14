@@ -11,7 +11,7 @@ import CompanyPage from "./pages/Home/CompanyPage";
 import ClientPage from "./pages/Home/ClientPage";
 import ProfisserPage from "./pages/Home/ProfisserPage";
 import CreateServicePage from "./pages/Home/CreateServicePage";
-import ServicesIdPage from "./pages/Home/ServicesIdPage";
+import ServicesPage from "./pages/Home/ServicesPage";
 
 
 export default function App() {
@@ -32,7 +32,7 @@ export default function App() {
             <Route path="/home/cliente/empresa" element={<CompanyPage />} />
             <Route path="/home/cliente/profissionais" element={<ProfisserPage />} />
             <Route path="/home/incluir" element={<CreateServicePage />} />
-            <Route path="/home/servicos" element={<ServicesIdPage />} />
+            <Route path="/home/servicos" element={<ServicesPage />} />
           </Routes>
         </BrowserRouter>
       </AuthContext.Provider>
